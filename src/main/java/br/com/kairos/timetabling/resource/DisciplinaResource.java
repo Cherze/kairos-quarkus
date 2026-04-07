@@ -1,7 +1,8 @@
 package br.com.kairos.timetabling.resource;
 
-mport br.com.kairos.timetabling.model.Professor;
-import br.com.kairos.timetabling.model.Professor;
+import br.com.kairos.timetabling.dto.DisciplinaDto;
+import br.com.kairos.timetabling.model.Disciplina;
+import br.com.kairos.timetabling.service.DisciplinaService;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.transaction.Transactional;
@@ -26,27 +27,27 @@ public class DisciplinaResource {
     @POST
     @Transactional
     //@RolesAllowed({"admin"})
-    //@CacheInvalidateAll(cacheName = "cache-produto")
-    public Response addProduto(ProfessorDto professorDto){
-        Professor professor = professorService.create(professorDto);
-        return Response.status(Response.Status.CREATED).entity(professor).build();
+    //@CacheInvalidateAll(cacheName = "cache-disciplina")
+    public Response addDisciplina(DisciplinaDto disciplinaDto){
+        Disciplina disciplina = disciplinaService.create(disciplinaDto);
+        return Response.status(Response.Status.CREATED).entity(disciplina).build();
     }
 
     @GET
-    @RolesAllowed({"user"})
-    public Response getProduto(){
-        List<ProfessorDto> professores = professores.getAll();
-        return Response.status(Response.Status.OK).entity(professores).build();
+    //@RolesAllowed({"user"})
+    public Response getDisciplina(){
+        List<DisciplinaDto> disciplinas = disciplinaService.getAll();
+        return Response.status(Response.Status.OK).entity(disciplinas).build();
 
     }
 
     @GET
     @Path("/{id}")
     //@RolesAllowed({"user"})
-    //@CacheResult(cacheName = "cache-produto")
+    //@CacheResult(cacheName = "cache-disciplina")
     public Response getById(@PathParam("id") long id){
-        ProfessorDto professor = professorService.getById(id);
-        return Response.status(Response.Status.OK).entity(professor).build();
+        DisciplinaDto disciplina = disciplinaService.getById(id);
+        return Response.status(Response.Status.OK).entity(disciplina).build();
 
     }
 
@@ -54,10 +55,10 @@ public class DisciplinaResource {
     @Path("/{id}")
     @Transactional
     //@RolesAllowed({"admin"})
-    //@CacheInvalidateAll(cacheName = "cache-produto")
-    public Response updateProduto(@PathParam("id") long id, ProfessorDto produtoDto){
-        Professor professorAtualizado = professorService.update(id,produtoDto);
-        return Response.status(Response.Status.OK).entity(professorAtualizado).build();
+    //@CacheInvalidateAll(cacheName = "cache-disciplina")
+    public Response updateDisciplina(@PathParam("id") long id, DisciplinaDto disciplinaDto){
+        Disciplina disciplinaAtualizada = disciplinaService.update(id,disciplinaDto);
+        return Response.status(Response.Status.OK).entity(disciplinaAtualizada).build();
 
     }
 
@@ -65,9 +66,9 @@ public class DisciplinaResource {
     @Path("/{id}")
     @Transactional
     //@RolesAllowed({"admin"})
-    //@CacheInvalidateAll(cacheName = "cache-produto")
-    public Response deleteProduto(@PathParam("id") long id){
-        professorService.delete(id);
+    //@CacheInvalidateAll(cacheName = "cache-disciplina")
+    public Response deleteDisciplina(@PathParam("id") long id){
+        disciplinaService.delete(id);
         return Response.status(Response.Status.NO_CONTENT).build();
 
     }

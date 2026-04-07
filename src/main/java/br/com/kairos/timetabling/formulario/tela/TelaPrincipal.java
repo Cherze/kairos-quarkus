@@ -766,7 +766,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         GeneIF gene1;
         ChromosomeIF cromossomoBest = (ChromosomeIF)lista.get(0);
         Disciplina disciplinaPrimeiroClick = controle.getDisciplina(codigoGA);
-        Professor professorDisciplinaPrimeiroClick = controle.getProfessor(disciplinaPrimeiroClick.getNomeProfessor());
+        Professor professorDisciplinaPrimeiroClick = disciplinaPrimeiroClick.getNomeProfessor();
         if(professorDisciplinaPrimeiroClick.getDisponibilidade(coluna * jTableTimetabling.getRowCount() + linha) != 0) {
             ArrayList arrayChoqueDisciplinas=new ArrayList();
             arrayChoqueDisciplinas.add(codigoGA);
@@ -785,7 +785,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         GeneIF gene1;
         ChromosomeIF cromossomoBest = (ChromosomeIF)lista.get(0);
         Disciplina disciplinaPrimeiroClick = controle.getDisciplina(codigoGA);
-        Professor professorDisciplinaPrimeiroClick = controle.getProfessor(disciplinaPrimeiroClick.getNomeProfessor());
+        Professor professorDisciplinaPrimeiroClick = disciplinaPrimeiroClick.getNomeProfessor();
         ArrayList arrayChoqueDisciplinas=new ArrayList();
         jTableTimetabling.setValueAt(arrayChoqueDisciplinas, linha, coluna);
         int posicaoPrimeiroProfessorNoCromossomo=controle.getOrdemProfessorNoCromossomo(professorDisciplinaPrimeiroClick.getNome());
@@ -812,12 +812,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             int linhaPrimeiroGene = Integer.valueOf(arrayClipBoard.get(1).toString()).intValue();
             int colunaPrimeiroGene = Integer.valueOf(arrayClipBoard.get(2).toString()).intValue();
             Disciplina disciplinaPrimeiroClick = controle.getDisciplina(genePrimeiroClick);
-            Professor professorDisciplinaPrimeiroClick = controle.getProfessor(disciplinaPrimeiroClick.getNomeProfessor());
+            Professor professorDisciplinaPrimeiroClick = disciplinaPrimeiroClick.getNomeProfessor();
             if(!arrayChoqueDisciplinas.isEmpty() && !arrayClipBoard.isEmpty()) {
                 disciplina = Integer.valueOf(arrayChoqueDisciplinas.get(0).toString()).intValue();
                 int geneSegundoClick = disciplina;
                 Disciplina disciplinaSegundoClick = controle.getDisciplina(geneSegundoClick);
-                Professor professorDisciplinaSegundoClick = controle.getProfessor(disciplinaSegundoClick.getNomeProfessor());
+                Professor professorDisciplinaSegundoClick = disciplinaSegundoClick.getNomeProfessor();
                 if(professorDisciplinaPrimeiroClick.getDisponibilidade(coluna * jTableTimetabling.getRowCount() + linha) != 0 && professorDisciplinaSegundoClick.getDisponibilidade(colunaPrimeiroGene * jTableTimetabling.getRowCount() + linhaPrimeiroGene) != 0) {
                     arrayChoqueDisciplinas = (ArrayList)jTableTimetabling.getValueAt(linha, coluna);
                     arrayChoqueDisciplinas.set(0, arrayClipBoard.get(0));
@@ -977,7 +977,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     int codigoGaDisciplina = Integer.valueOf(cromossomoBest.getGene(indiceCromossomo).toString()).intValue();
                     if(codigoGaDisciplina != 0) {
                         Disciplina disciplina = controle.getDisciplina(codigoGaDisciplina);
-                        Professor professorTeste = controle.getProfessor(disciplina.getNomeProfessor());
+                        Professor professorTeste = disciplina.getNomeProfessor();
                         if(disciplina.getSemestre().equals(jListSemestres.getSelectedValue())){
                             if(professorTeste.getDisponibilidade(j * jTableTimetabling.getRowCount() + k) != 0 && disciplina.getNomeProfessor().equals(professor.getNome())) {
                                 if(jTableTimetabling.getValueAt(k, j) == null) {
