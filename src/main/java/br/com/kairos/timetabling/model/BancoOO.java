@@ -7,9 +7,9 @@
  * and open the template in the editor.
  */
 
-package br.com.kairos.timetabling.objetos;
+package br.com.kairos.timetabling.model;
  
-import java.io.File;
+/**import java.io.File;
 import com.db4o.*;
 import br.com.kairos.timetabling.controle.ControleHorario;
 import br.com.kairos.jga.core.chromosome.ChromosomeIF;
@@ -17,7 +17,7 @@ public class BancoOO {
     ObjectContainer db;
     String nomeArquivoBanco="";
     String nomeArquivoHorario="";
-    /** Creates a new instance of BancoOO */
+
     public BancoOO() {
     }
     public void salvarDados(ControleHorario controle){
@@ -80,4 +80,4 @@ public class BancoOO {
     public String getNomeArquivoHorario(){
         return this.nomeArquivoHorario;
     }
-}
+}*/

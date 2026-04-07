@@ -10,11 +10,10 @@
 package br.com.kairos.timetabling.fitness;
  
 import br.com.kairos.jga.core.chromosome.ChromosomeIF;
-import br.com.kairos.jga.core.genes.GeneIF;
 import br.com.kairos.jga.fitness.AbstractFitnessFunction;
 import br.com.kairos.timetabling.controle.ControleHorario;
 import br.com.kairos.timetabling.filter.*;
-import br.com.kairos.timetabling.objetos.*;
+
 import java.util.*;
 
 public class FitnessHorario extends AbstractFitnessFunction{

@@ -7,13 +7,11 @@
 package br.com.kairos.timetabling.formulario.tela;
  
 
-import java.awt.Component;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-import br.com.kairos.timetabling.objetos.*;
+
+import br.com.kairos.timetabling.model.*;
 import br.com.kairos.timetabling.controle.*;
-import java.util.*;
+
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle;
 

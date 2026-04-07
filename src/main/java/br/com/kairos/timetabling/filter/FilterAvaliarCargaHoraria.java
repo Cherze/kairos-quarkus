@@ -13,8 +13,8 @@ import br.com.kairos.jga.core.chromosome.ChromosomeIF;
 import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.Iterator;
-import br.com.kairos.timetabling.objetos.Disciplina;
-import br.com.kairos.timetabling.objetos.Professor;
+import br.com.kairos.timetabling.model.Disciplina;
+import br.com.kairos.timetabling.model.Professor;
 
 public class FilterAvaliarCargaHoraria implements FilterIF{
     ArrayList disciplinas;

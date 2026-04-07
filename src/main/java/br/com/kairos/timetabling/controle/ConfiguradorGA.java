@@ -13,7 +13,6 @@ import br.com.kairos.jga.core.*;
 import br.com.kairos.jga.core.chromosome.*;
 import br.com.kairos.timetabling.cromossomo.*;
 import br.com.kairos.timetabling.fitness.FitnessHorario;
-import br.com.kairos.timetabling.objetos.*;
 import br.com.kairos.jga.fitness.*;
 import br.com.kairos.jga.mutation.*;
 import br.com.kairos.jga.crossover.*;

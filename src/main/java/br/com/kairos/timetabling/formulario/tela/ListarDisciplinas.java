@@ -9,7 +9,7 @@ package br.com.kairos.timetabling.formulario.tela;
  
 import javax.swing.DefaultListModel;
 import br.com.kairos.timetabling.controle.ControleHorario;
-import br.com.kairos.timetabling.objetos.*;
+import br.com.kairos.timetabling.model.*;
 import java.util.*;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle;

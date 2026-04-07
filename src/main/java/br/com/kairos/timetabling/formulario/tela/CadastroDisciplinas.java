@@ -4,17 +4,12 @@ package br.com.kairos.timetabling.formulario.tela;
  
 
 import javax.swing.JColorChooser;
-import javax.swing.JComboBox;
-import javax.swing.JList;
-import javax.swing.event.ListDataListener;
+
 import br.com.kairos.timetabling.controle.ControleHorario;
-import br.com.kairos.timetabling.objetos.*;
+import br.com.kairos.timetabling.model.*;
 import javax.swing.DefaultListModel;
-import java.awt.event.*;
 import javax.swing.JOptionPane;
 import java.util.*;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle;

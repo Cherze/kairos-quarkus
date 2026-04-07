@@ -11,16 +11,13 @@ package br.com.kairos.timetabling.formulario.tela;
 
  
 import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JTable;
-import javax.swing.border.Border;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.BorderFactory;
 import java.awt.Color;
 import br.com.kairos.timetabling.controle.ControleHorario;
-import br.com.kairos.timetabling.objetos.*;
+import br.com.kairos.timetabling.model.*;
 
 public class JLabelRendererDisciplinasProfessor extends JLabel implements TableCellRenderer{
     ControleHorario controle;

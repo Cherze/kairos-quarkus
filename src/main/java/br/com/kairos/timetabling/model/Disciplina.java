@@ -7,21 +7,44 @@
  * and open the template in the editor.
  */
 
-package br.com.kairos.timetabling.objetos;
+package br.com.kairos.timetabling.model;
  
 
-import java.util.ArrayList;
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "disciplinas")
 
 public class Disciplina {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public long id;
+    @Column(nullable = false)
     private String nome;
+    @Column(nullable = false)
     private String sigla;
+    @Column(nullable = false)
     private int cargaHorariaSemanal;
+    @Column(nullable = false)
     private int codigoGA;
+    @Column(nullable = false)
     private boolean prioridade;
-    private String professor;
-    private String grupo;
+    //@Column(nullable = false)
+    //private String professor;
+    @ManyToMany
+    @JoinTable(
+            name = "disciplina_professor", // Nome da tabela no Postgres
+            joinColumns = @JoinColumn(name = "disciplina_id"),
+            inverseJoinColumns = @JoinColumn(name = "professor_id")
+    )
+    public List<Professor> professores = new ArrayList<>();
+    @Column(nullable = false)
     private String semestre;
+    @Column(nullable = false)
     private Color corDisciplina;
     
    public Disciplina(String nomeDisciplina, String sigla, String nomeProfessor ,
@@ -76,11 +99,12 @@ public class Disciplina {
     }
     
     public void setProfessor(String nomeProfessor){
-        this.professor=nomeProfessor;
+       Professor professor=new Professor(nomeProfessor);
+       this.professores.add(professor);
     }    
     
-    public String getNomeProfessor(){
-        return professor;
+    public Professor getNomeProfessor(){
+        return professores.getLast();
     }
     
     public void setPrioridade(boolean prioridade){

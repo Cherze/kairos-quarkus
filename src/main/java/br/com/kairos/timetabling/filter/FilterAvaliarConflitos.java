@@ -10,12 +10,12 @@
 package br.com.kairos.timetabling.filter;
  
 import br.com.kairos.jga.core.chromosome.ChromosomeIF;
-import br.com.kairos.timetabling.cromossomo.CromossomoHorario;
+
 import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.Iterator;
-import br.com.kairos.timetabling.objetos.Disciplina;
-import br.com.kairos.timetabling.objetos.Professor;
+import br.com.kairos.timetabling.model.Disciplina;
+import br.com.kairos.timetabling.model.Professor;
 
 public class FilterAvaliarConflitos implements FilterIF{
     ArrayList disciplinas;

@@ -7,13 +7,26 @@
  * and open the template in the editor.
  */
 
-package br.com.kairos.timetabling.objetos;
+package br.com.kairos.timetabling.model;
+
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
+@Entity
+@Table(name = "professores")
 public class Professor {
-    private String nome;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public long id;
+    @Column(nullable = false)
+    public String nome;
+    @Column(nullable = false)
     Integer[] disponibilidade;
+    @ManyToMany(mappedBy = "professor")
+    public List<Disciplina> disciplinas = new ArrayList<>();
     
     /** Creates a new instance of Professor */
     public Professor(String nome) {

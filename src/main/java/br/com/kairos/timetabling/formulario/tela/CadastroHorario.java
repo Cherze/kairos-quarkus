@@ -6,16 +6,10 @@
 
 package br.com.kairos.timetabling.formulario.tela;
  
-import java.util.ArrayList;
-import javax.swing.DefaultListModel;
-import javax.swing.JDialog;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JList;
-import javax.swing.table.TableColumn;
-import br.com.kairos.timetabling.objetos.*;
+
+import br.com.kairos.timetabling.model.*;
 import br.com.kairos.timetabling.controle.*;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle;

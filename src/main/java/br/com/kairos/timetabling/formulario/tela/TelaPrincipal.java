@@ -11,8 +11,7 @@ import javax.swing.JFileChooser;
 import br.com.kairos.jga.core.genes.GeneIF;
 import br.com.kairos.jga.core.chromosome.*;
 import br.com.kairos.timetabling.controle.*;
-import br.com.kairos.timetabling.cromossomo.*;
-import br.com.kairos.timetabling.objetos.*;
+import br.com.kairos.timetabling.model.*;
 
 import java.awt.event.MouseEvent;
 import java.util.*;

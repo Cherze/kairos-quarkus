@@ -11,7 +11,7 @@ package br.com.kairos.timetabling.controle;
  
 
 import java.util.*;
-import br.com.kairos.timetabling.objetos.*;
+import br.com.kairos.timetabling.model.*;
 
 public class ControleHorario {
     ArrayList grupoDisciplinas = new ArrayList();

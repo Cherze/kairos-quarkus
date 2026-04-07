@@ -7,13 +7,22 @@
  * and open the template in the editor.
  */
 
-package br.com.kairos.timetabling.objetos;
+package br.com.kairos.timetabling.model;
 
-import java.util.ArrayList;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "horarios")
 
 public class Horario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public long id;
+    @Column(nullable = false)
     private String[] dias;
+    @Column(nullable = false)
     private int periodos=0;
+    @Column(nullable = false)
     private final String[] diasPossiveis= {"Horario","Segunda", "Terca", "Quarta", "Quinta", "Sexta", "Sabado", "Domingo"};
     
     public Horario() {
