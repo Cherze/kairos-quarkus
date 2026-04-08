@@ -24,7 +24,7 @@ public class Professor {
     @Column(nullable = false)
     public String nome;
     @Column(nullable = false)
-    Integer[] disponibilidade;
+    public Integer[] disponibilidade;
     @ManyToMany(mappedBy = "professor")
     public List<Disciplina> disciplinas = new ArrayList<>();
     
@@ -32,6 +32,7 @@ public class Professor {
     public Professor(String nome) {
         this.setNome(nome);
     }
+    public Professor(){}
     
     public void setNome(String nome){
         this.nome=nome;

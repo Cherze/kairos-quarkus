@@ -14,6 +14,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -27,14 +28,14 @@ public class Disciplina {
     private String nome;
     @Column(nullable = false)
     private String sigla;
-    @Column(nullable = false)
+    @Column(name="carga_horaria_semanal", nullable = false)
+    @JsonProperty("carga_horaria_semanal")
     private int cargaHorariaSemanal;
-    @Column(nullable = false)
+    @Column(name="codigo_GA", nullable = false)
+    @JsonProperty("codigo_GA")
     private int codigoGA;
     @Column(nullable = false)
     private boolean prioridade;
-    //@Column(nullable = false)
-    //private String professor;
     @ManyToMany
     @JoinTable(
             name = "disciplina_professor", // Nome da tabela no Postgres
@@ -57,7 +58,8 @@ public class Disciplina {
         this.setSemestre(semestre);
         this.setCor(cor);
     }
-    
+    public Disciplina(){}
+
     public void setNome(String nome){
         this.nome=nome;
     }
