@@ -16,12 +16,9 @@ public class ProfessorMapper {
         if (professorDto == null){
             return null;
         }
-        professor.setCgc(professorDto.getCgc());
-        professor.setNomeProfessor(professorDto.getNomeProfessor());
         professor.setNome(professorDto.getNome());
-        professor.setCep(professorDto.getCep());
-        professor.setNumero(professorDto.getNumero());
-        professor.setDataInauguracao(professorDto.getDataInauguracao());
+        professor.disponibilidade=professorDto.disponibilidade;
+        professor.disciplinas=professorDto.disciplinas;
         return professor;
     }
 
@@ -30,15 +27,9 @@ public class ProfessorMapper {
             return null;
         }
         ProfessorDto professorDto = new ProfessorDto();
-        professorDto.setCgc(professor.getCgc());
-        professorDto.setNomeProfessor(professor.getNomeProfessor());
-        professorDto.setCep(professor.getCep());
-        professorDto.setDataInauguracao(professor.getDataInauguracao());
-        professorDto.setNomeGestor(professor.getNomeGestor());
-        professorDto.setLogradouro(professor.getLogradouro());
-        professorDto.setNumero(professor.getNumero());
-        professorDto.setCidade(professor.getCidade());
-        professorDto.setEstado(professor.getEstado());
+        professorDto.setNome(professor.getNome());
+        professorDto.disponibilidade=professor.disponibilidade;
+        professorDto.disciplinas=professor.disciplinas;
         return professorDto;
     }
     

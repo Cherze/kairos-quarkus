@@ -103,10 +103,12 @@ public class Disciplina {
     public void setProfessor(String nomeProfessor){
        Professor professor=new Professor(nomeProfessor);
        this.professores.add(professor);
-    }    
-    
-    public Professor getNomeProfessor(){
+    }
+    public Professor getProfessor(){
         return professores.getLast();
+    }
+    public String getNomeProfessor(){
+        return professores.getLast().getNome();
     }
     
     public void setPrioridade(boolean prioridade){

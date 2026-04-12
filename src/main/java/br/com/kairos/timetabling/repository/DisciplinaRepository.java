@@ -6,4 +6,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class DisciplinaRepository implements PanacheRepository<Disciplina> {
+    public Disciplina findByName(String nome) {
+        return find("nome", nome).firstResult();
+    }
 }

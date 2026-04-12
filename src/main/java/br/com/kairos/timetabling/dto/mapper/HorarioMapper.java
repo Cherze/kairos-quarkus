@@ -7,24 +7,17 @@ public class HorarioMapper {
 
     public static Horario toEntity(HorarioDto horarioDto) {
         Horario horario = new Horario();
-        horario.setNomeHorario(horarioDto.getNomeHorario());
-        horario.setDataInauguracao(horarioDto.getDataInauguracao());
-        horario.setCgc(horarioDto.getCgc());
-        horario.setCep(horarioDto.getCep());
-        horario.setNumero(horarioDto.getNumero());
-        horario.setNomeGestor(horarioDto.getNomeGestor());
+        horario.setDias(horarioDto.getDias());
+        horario.setPeriodos(horarioDto.getPeriodos());
+
         return horario;
     }
     public static Horario updateHorario(HorarioDto horarioDto, Horario horario){
         if (horarioDto == null){
             return null;
         }
-        horario.setCgc(horarioDto.getCgc());
-        horario.setNomeHorario(horarioDto.getNomeHorario());
-        horario.setNomeGestor(horarioDto.getNomeGestor());
-        horario.setCep(horarioDto.getCep());
-        horario.setNumero(horarioDto.getNumero());
-        horario.setDataInauguracao(horarioDto.getDataInauguracao());
+        horario.setDias(horarioDto.getDias());
+        horario.setPeriodos(horarioDto.getPeriodos());
         return horario;
     }
 
@@ -33,15 +26,8 @@ public class HorarioMapper {
             return null;
         }
         HorarioDto horarioDto = new HorarioDto();
-        horarioDto.setCgc(horario.getCgc());
-        horarioDto.setNomeHorario(horario.getNomeHorario());
-        horarioDto.setCep(horario.getCep());
-        horarioDto.setDataInauguracao(horario.getDataInauguracao());
-        horarioDto.setNomeGestor(horario.getNomeGestor());
-        horarioDto.setLogradouro(horario.getLogradouro());
-        horarioDto.setNumero(horario.getNumero());
-        horarioDto.setCidade(horario.getCidade());
-        horarioDto.setEstado(horario.getEstado());
+        horarioDto.setDias(horario.getDias());
+        horarioDto.setPeriodos(horario.getPeriodos());
         return horarioDto;
     }
     

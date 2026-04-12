@@ -7,6 +7,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class ProfessorRepository implements PanacheRepository<Professor> {
 
-
+    public Professor findByNome(String nome){
+        return find("nome", nome).firstResult();
+    }
 
 }

@@ -7,24 +7,24 @@ public class DisciplinaMapper {
 
     public static Disciplina toEntity(DisciplinaDto disciplinaDto) {
         Disciplina disciplina = new Disciplina();
-        disciplina.setNomeDisciplina(disciplinaDto.getNomeDisciplina());
-        disciplina.setDataInauguracao(disciplinaDto.getDataInauguracao());
-        disciplina.setCgc(disciplinaDto.getCgc());
-        disciplina.setCep(disciplinaDto.getCep());
-        disciplina.setNumero(disciplinaDto.getNumero());
-        disciplina.setNomeGestor(disciplinaDto.getNomeGestor());
+        disciplina.setNome(disciplinaDto.getNome());
+        disciplina.setSigla(disciplinaDto.getSigla());
+        disciplina.setSemestre(disciplinaDto.getSemestre());
+        disciplina.setCargaHorariaSemanal(disciplinaDto.getCargaHorariaSemanal()+"");
+        disciplina.setCodigoGA(disciplinaDto.getCodigoGA());
+
         return disciplina;
     }
     public static Disciplina updateDisciplina(DisciplinaDto disciplinaDto, Disciplina disciplina){
         if (disciplinaDto == null){
             return null;
         }
-        disciplina.setCgc(disciplinaDto.getCgc());
-        disciplina.setNomeDisciplina(disciplinaDto.getNomeDisciplina());
-        disciplina.setNomeGestor(disciplinaDto.getNomeGestor());
-        disciplina.setCep(disciplinaDto.getCep());
-        disciplina.setNumero(disciplinaDto.getNumero());
-        disciplina.setDataInauguracao(disciplinaDto.getDataInauguracao());
+
+        disciplina.setNome(disciplinaDto.getNome());
+        disciplina.setSigla(disciplinaDto.getSigla());
+        disciplina.setSemestre(disciplinaDto.getSemestre());
+        disciplina.setCargaHorariaSemanal(disciplinaDto.getCargaHorariaSemanal()+"");
+        disciplina.setCodigoGA(disciplinaDto.getCodigoGA());
         return disciplina;
     }
 
@@ -33,15 +33,11 @@ public class DisciplinaMapper {
             return null;
         }
         DisciplinaDto disciplinaDto = new DisciplinaDto();
-        disciplinaDto.setCgc(disciplina.getCgc());
-        disciplinaDto.setNomeDisciplina(disciplina.getNomeDisciplina());
-        disciplinaDto.setCep(disciplina.getCep());
-        disciplinaDto.setDataInauguracao(disciplina.getDataInauguracao());
-        disciplinaDto.setNomeGestor(disciplina.getNomeGestor());
-        disciplinaDto.setLogradouro(disciplina.getLogradouro());
-        disciplinaDto.setNumero(disciplina.getNumero());
-        disciplinaDto.setCidade(disciplina.getCidade());
-        disciplinaDto.setEstado(disciplina.getEstado());
+        disciplinaDto.setNome(disciplina.getNome());
+        disciplinaDto.setSigla(disciplina.getSigla());
+        disciplinaDto.setSemestre(disciplina.getSemestre());
+        disciplinaDto.setCargaHorariaSemanal(disciplina.getCargaHorariaSemanal()+"");
+        disciplinaDto.setCodigoGA(disciplina.getCodigoGA());
         return disciplinaDto;
     }
     

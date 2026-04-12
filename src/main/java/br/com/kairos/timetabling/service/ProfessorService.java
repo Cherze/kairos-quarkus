@@ -11,6 +11,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
+import static io.quarkus.hibernate.orm.panache.PanacheEntityBase.findById;
+
 @ApplicationScoped
 
 public class ProfessorService {
@@ -23,7 +25,7 @@ public class ProfessorService {
 
 
     public Professor create(ProfessorDto professorDto) {
-        Professor professor = professorRepository.findById(professorDto.getNome());
+        Professor professor = professorRepository.findByNome(professorDto.getNome());
         if (professor != null) {
             throw new ProfessorJaExisteException("O professor " + professor.getNome() + " ja está cadastrado.");
         }
@@ -34,18 +36,19 @@ public class ProfessorService {
     }
 
     public ProfessorDto getById(long id) {
-        return ProfessorMapper.toDto(findById(id));
+        return ProfessorMapper.toDto(professorRepository.findById(id));
     }
 
     public Professor update(long id, ProfessorDto professorDto) {
-        Professor professor = this.findById(id);
+        Professor professor = professorRepository.findById(id);
         ProfessorMapper.updateProfessor(professorDto, professor);
         return professor;
     }
 
     public void delete(long id) {
-        Professor professor = this.findById(id);
-        professorRepository.delete(professor);
+        //Professor professor = this.findById(id);
+        //professorRepository.delete(professor);
+        professorRepository.deleteById(id);
     }
 
     public List<ProfessorDto> getAll() {

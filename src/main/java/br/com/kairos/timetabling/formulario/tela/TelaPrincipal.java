@@ -35,7 +35,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private final DefaultListModel modelListaSemestres = new DefaultListModel();
     private final ArrayList arrayClipBoard = new ArrayList();
     private List lista=null;
-    private final BancoOO banco=new BancoOO();
+    //private final BancoOO banco=new BancoOO();
     
     public TelaPrincipal() {
         initComponents();
@@ -515,15 +515,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
             JFileChooser abrirArquivoHorario=new JFileChooser();
             abrirArquivoHorario.showOpenDialog(this);
             nomeArquivoHorario=abrirArquivoHorario.getSelectedFile().getName();
-            banco.setNomeArquivoHorario(nomeArquivoHorario);
+            //banco.setNomeArquivoHorario(nomeArquivoHorario);
             lista=new ArrayList();
-            lista.add(0,banco.restaurarHorario());
+            //lista.add(0,banco.restaurarHorario());
             ChromosomeIF cromossomoBest = (ChromosomeIF)lista.get(0);
             System.out.println("FITNESS: "+cromossomoBest.getFitnessValue()+" ----> "+ cromossomoBest);
             this.construirTabela();
         }catch(Exception e){
             if(nomeArquivoHorario!=null)
-            JOptionPane.showMessageDialog(this, "Não foi possível restaurar um horário do arquivo "+banco.getNomeArquivoHorario()+".", "Mensagem", 1, new ImageIcon(getClass().getResource("/timetabling/formulario/icones/pare.png")));
+            JOptionPane.showMessageDialog(this, "Não foi possível restaurar um horário do arquivo "+/**banco.getNomeArquivoHorario()+*/".", "Mensagem", 1, new ImageIcon(getClass().getResource("/timetabling/formulario/icones/pare.png")));
         }
     }//GEN-LAST:event_jMenuItemAbrirHorarioSalvoActionPerformed
     
@@ -533,11 +533,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
             JFileChooser salvarArquivoHorario=new JFileChooser();
             salvarArquivoHorario.showSaveDialog(this);
             String nomeArquivoHorario=salvarArquivoHorario.getName(salvarArquivoHorario.getSelectedFile());
-            banco.setNomeArquivoHorario(nomeArquivoHorario);
-            banco.salvarHorario(cromossomoBest);
-            JOptionPane.showMessageDialog(this, "Horário gerado foi salvo no atual arquivo "+banco.getNomeArquivoHorario()+".", "Mensagem", 1, new ImageIcon(getClass().getResource("/timetabling/formulario/icones/atencao.png")));
+            //banco.setNomeArquivoHorario(nomeArquivoHorario);
+            //banco.salvarHorario(cromossomoBest);
+            JOptionPane.showMessageDialog(this, "Horário gerado foi salvo no atual arquivo "+/**banco.getNomeArquivoHorario()+*/".", "Mensagem", 1, new ImageIcon(getClass().getResource("/timetabling/formulario/icones/atencao.png")));
         }catch(Exception e){
-            JOptionPane.showMessageDialog(this, "Não foi possível salvar o horário no arquivo "+banco.getNomeArquivoHorario()+".", "Mensagem", 1, new ImageIcon(getClass().getResource("/timetabling/formulario/icones/pare.png")));
+            JOptionPane.showMessageDialog(this, "Não foi possível salvar o horário no arquivo "+/**banco.getNomeArquivoHorario()+*/".", "Mensagem", 1, new ImageIcon(getClass().getResource("/timetabling/formulario/icones/pare.png")));
         }
     }//GEN-LAST:event_jMenuItemSalvarHorarioGeradoActionPerformed
     
@@ -552,7 +552,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
         controle=null;
-        banco.setNomeArquivoBanco("");
+        //banco.setNomeArquivoBanco("");
         System.gc();
         controle=new ControleHorario();
         jMenuItemCadastrarDisciplinas.setEnabled(false);
@@ -586,8 +586,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
             JFileChooser salvarArquivo=new JFileChooser();
             salvarArquivo.showSaveDialog(this);
             String nomeArquivo=salvarArquivo.getName(salvarArquivo.getSelectedFile());
-            banco.setNomeArquivoBanco(nomeArquivo);
-            banco.salvarDados(controle);
+            //banco.setNomeArquivoBanco(nomeArquivo);
+            //banco.salvarDados(controle);
             this.setTitle("Kairós - Geração Automática de Horários Acadêmicos"+" .::. "+nomeArquivo);
         }catch(Exception e){}
     }//GEN-LAST:event_jMenuItemSalvarComoActionPerformed
@@ -603,16 +603,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
         try{
-            if(banco.getNomeArquivoBanco()!=""){
-                banco.salvarDados(controle);
-            }else{
+            //if(banco.getNomeArquivoBanco()!=""){
+                //banco.salvarDados(controle);
+            //}else{
                 JFileChooser salvarArquivo=new JFileChooser();
                 salvarArquivo.showSaveDialog(this);
                 String nomeArquivo=salvarArquivo.getName(salvarArquivo.getSelectedFile());
-                banco.setNomeArquivoBanco(nomeArquivo);
-                banco.salvarDados(controle);
+                //banco.setNomeArquivoBanco(nomeArquivo);
+                //banco.salvarDados(controle);
                 this.setTitle("Kairós - Geração Automática de Horários Acadêmicos"+" .::. "+nomeArquivo);
-            }
+            //}
         }catch(Exception e){}
     }//GEN-LAST:event_jButtonSalvarActionPerformed
     
@@ -680,8 +680,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
             JFileChooser abrirArquivo=new JFileChooser();
             abrirArquivo.showOpenDialog(this);
             nomeArquivo=abrirArquivo.getSelectedFile().getName();
-            banco.setNomeArquivoBanco(nomeArquivo);
-            controle=banco.restaurarBaseDados();
+            //banco.setNomeArquivoBanco(nomeArquivo);
+            //controle=banco.restaurarBaseDados();
             jMenuItemCadastrarDisciplinas.setEnabled(true);
             jMenuItemCadastrarProfessor.setEnabled(true);
             jMenuItemDisponibilidades.setEnabled(true);
@@ -766,7 +766,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         GeneIF gene1;
         ChromosomeIF cromossomoBest = (ChromosomeIF)lista.get(0);
         Disciplina disciplinaPrimeiroClick = controle.getDisciplina(codigoGA);
-        Professor professorDisciplinaPrimeiroClick = disciplinaPrimeiroClick.getNomeProfessor();
+        Professor professorDisciplinaPrimeiroClick = disciplinaPrimeiroClick.getProfessor();
         if(professorDisciplinaPrimeiroClick.getDisponibilidade(coluna * jTableTimetabling.getRowCount() + linha) != 0) {
             ArrayList arrayChoqueDisciplinas=new ArrayList();
             arrayChoqueDisciplinas.add(codigoGA);
@@ -785,7 +785,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         GeneIF gene1;
         ChromosomeIF cromossomoBest = (ChromosomeIF)lista.get(0);
         Disciplina disciplinaPrimeiroClick = controle.getDisciplina(codigoGA);
-        Professor professorDisciplinaPrimeiroClick = disciplinaPrimeiroClick.getNomeProfessor();
+        Professor professorDisciplinaPrimeiroClick = disciplinaPrimeiroClick.getProfessor();
         ArrayList arrayChoqueDisciplinas=new ArrayList();
         jTableTimetabling.setValueAt(arrayChoqueDisciplinas, linha, coluna);
         int posicaoPrimeiroProfessorNoCromossomo=controle.getOrdemProfessorNoCromossomo(professorDisciplinaPrimeiroClick.getNome());
@@ -812,12 +812,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             int linhaPrimeiroGene = Integer.valueOf(arrayClipBoard.get(1).toString()).intValue();
             int colunaPrimeiroGene = Integer.valueOf(arrayClipBoard.get(2).toString()).intValue();
             Disciplina disciplinaPrimeiroClick = controle.getDisciplina(genePrimeiroClick);
-            Professor professorDisciplinaPrimeiroClick = disciplinaPrimeiroClick.getNomeProfessor();
+            Professor professorDisciplinaPrimeiroClick = disciplinaPrimeiroClick.getProfessor();
             if(!arrayChoqueDisciplinas.isEmpty() && !arrayClipBoard.isEmpty()) {
                 disciplina = Integer.valueOf(arrayChoqueDisciplinas.get(0).toString()).intValue();
                 int geneSegundoClick = disciplina;
                 Disciplina disciplinaSegundoClick = controle.getDisciplina(geneSegundoClick);
-                Professor professorDisciplinaSegundoClick = disciplinaSegundoClick.getNomeProfessor();
+                Professor professorDisciplinaSegundoClick = disciplinaSegundoClick.getProfessor();
                 if(professorDisciplinaPrimeiroClick.getDisponibilidade(coluna * jTableTimetabling.getRowCount() + linha) != 0 && professorDisciplinaSegundoClick.getDisponibilidade(colunaPrimeiroGene * jTableTimetabling.getRowCount() + linhaPrimeiroGene) != 0) {
                     arrayChoqueDisciplinas = (ArrayList)jTableTimetabling.getValueAt(linha, coluna);
                     arrayChoqueDisciplinas.set(0, arrayClipBoard.get(0));
@@ -977,7 +977,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     int codigoGaDisciplina = Integer.valueOf(cromossomoBest.getGene(indiceCromossomo).toString()).intValue();
                     if(codigoGaDisciplina != 0) {
                         Disciplina disciplina = controle.getDisciplina(codigoGaDisciplina);
-                        Professor professorTeste = disciplina.getNomeProfessor();
+                        Professor professorTeste = disciplina.getProfessor();
                         if(disciplina.getSemestre().equals(jListSemestres.getSelectedValue())){
                             if(professorTeste.getDisponibilidade(j * jTableTimetabling.getRowCount() + k) != 0 && disciplina.getNomeProfessor().equals(professor.getNome())) {
                                 if(jTableTimetabling.getValueAt(k, j) == null) {
