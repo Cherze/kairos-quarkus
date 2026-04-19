@@ -105,10 +105,16 @@ public class Disciplina {
        this.professores.add(professor);
     }
     public Professor getProfessor(){
-        return professores.getLast();
+       if (professores.isEmpty()){
+           return null;
+       }
+        return professores.getFirst();
     }
     public String getNomeProfessor(){
-        return professores.getLast().getNome();
+       if (professores.isEmpty()){
+           return null;
+       }
+        return professores.getFirst().getNome();
     }
     
     public void setPrioridade(boolean prioridade){

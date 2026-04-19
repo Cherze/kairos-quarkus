@@ -7,9 +7,10 @@ import br.com.kairos.timetabling.exception.DisciplinaJaExisteException;
 import br.com.kairos.timetabling.model.Disciplina;
 import br.com.kairos.timetabling.model.Professor;
 import br.com.kairos.timetabling.repository.DisciplinaRepository;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.List;
-
+@ApplicationScoped
 public class DisciplinaService {
     private final DisciplinaRepository disciplinaRepository;
 

@@ -25,7 +25,7 @@ public class Professor {
     public String nome;
     @Column(nullable = false)
     public Integer[] disponibilidade;
-    @ManyToMany(mappedBy = "professor")
+    @ManyToMany(mappedBy = "professores")
     public List<Disciplina> disciplinas = new ArrayList<>();
     
     /** Creates a new instance of Professor */
