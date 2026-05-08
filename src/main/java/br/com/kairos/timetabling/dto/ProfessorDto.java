@@ -1,7 +1,6 @@
 package br.com.kairos.timetabling.dto;
 
 import br.com.kairos.timetabling.model.Disciplina;
-import jakarta.persistence.Column;
 import jakarta.persistence.ManyToMany;
 
 import java.util.ArrayList;
@@ -9,9 +8,7 @@ import java.util.List;
 
 public class ProfessorDto {
 
-    @Column(nullable = false)
     public String nome;
-    @Column(nullable = false)
     public Integer[] disponibilidade;
     @ManyToMany(mappedBy = "professor")
     public List<Disciplina> disciplinas = new ArrayList<>();

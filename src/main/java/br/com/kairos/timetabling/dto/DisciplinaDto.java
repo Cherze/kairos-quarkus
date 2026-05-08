@@ -2,7 +2,6 @@ package br.com.kairos.timetabling.dto;
 
 import br.com.kairos.timetabling.model.Professor;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
@@ -13,17 +12,12 @@ import java.util.List;
 
 public class DisciplinaDto {
 
-    @Column(nullable = false)
     private String nome;
-    @Column(nullable = false)
     private String sigla;
-    @Column(name="carga_horaria_semanal", nullable = false)
     @JsonProperty("carga_horaria_semanal")
     private int cargaHorariaSemanal;
-    @Column(name="codigo_GA", nullable = false)
     @JsonProperty("codigo_GA")
     private int codigoGA;
-    @Column(nullable = false)
     private boolean prioridade;
     @ManyToMany
     @JoinTable(
@@ -32,9 +26,7 @@ public class DisciplinaDto {
             inverseJoinColumns = @JoinColumn(name = "professor_id")
     )
     public List<Professor> professores = new ArrayList<>();
-    @Column(nullable = false)
     private String semestre;
-    @Column(nullable = false)
     private Color corDisciplina;
 
 

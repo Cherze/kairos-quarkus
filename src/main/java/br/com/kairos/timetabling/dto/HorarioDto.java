@@ -5,11 +5,8 @@ import jakarta.persistence.Column;
 public class HorarioDto {
 
     public long id;
-    @Column(nullable = false)
     private String[] dias;
-    @Column(nullable = false)
     private int periodos=0;
-    @Column(nullable = false)
     private final String[] diasPossiveis= {"Horario","Segunda", "Terca", "Quarta", "Quinta", "Sexta", "Sabado", "Domingo"};
 
 
